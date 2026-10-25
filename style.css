@@ -1,0 +1,107 @@
+/* ---------- COLORS ----------
+   Change these values to restyle the whole site.
+   Everything below uses these variables, e.g. var(--accent). */
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --card: #f4f4f6;
+  --accent: #4f46e5;   /* try #e11d48 (red) or #059669 (green) */
+}
+
+/* Dark mode: applies automatically if the visitor's device is set to dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f12;
+    --text: #f0f0f2;
+    --muted: #a0a0a8;
+    --card: #1b1b20;
+    --accent: #818cf8;
+  }
+}
+
+/* ---------- BASICS ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }   /* smooth scrolling when clicking nav links */
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Keeps content from stretching too wide on big screens */
+section, .hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0.25rem 0; line-height: 1.1; }
+h2 { font-size: 1.75rem; margin-top: 0; }
+
+/* ---------- NAV BAR ---------- */
+.nav {
+  position: sticky;           /* stays at the top while scrolling */
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card);
+}
+.nav .logo { font-weight: 700; color: var(--text); }
+.nav nav a { margin-left: 1.25rem; color: var(--muted); }
+.nav nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* ---------- HERO ---------- */
+.hero { padding-top: 6rem; padding-bottom: 5rem; }
+.eyebrow { color: var(--accent); font-weight: 600; margin: 0; }
+.tagline { font-size: 1.25rem; color: var(--muted); max-width: 32rem; }
+
+/* ---------- BUTTON ---------- */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.button:hover { opacity: 0.9; text-decoration: none; }
+
+/* ---------- SKILL TAGS ---------- */
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tags li {
+  background: var(--card);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* ---------- PROJECT CARDS ---------- */
+/* Auto-fits as many columns as will fit; stacks to one column on phones */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-4px); }
+.card h3 { margin-top: 0; }
+
+/* ---------- CONTACT + FOOTER ---------- */
+.links { margin-top: 1.5rem; color: var(--muted); }
+footer { text-align: center; padding: 2rem 1rem; color: var(--muted); font-size: 0.9rem; }
