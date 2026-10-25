@@ -3,50 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The title shows in the browser tab. Change it to your name. -->
-  <title>Your Name | Portfolio</title>
-  <meta name="description" content="Portfolio of Your Name">
-  <!-- Link to the stylesheet that controls colors, fonts and layout -->
+  <title>Kushal Pallaka | Portfolio</title>
+  <meta name="description" content="Kushal Pallaka: quantitative finance, forecasting and backend engineering projects.">
+  <meta name="theme-color" content="#4f46e5">
+  <!-- Link preview when the site is shared (Slack, iMessage, LinkedIn) -->
+  <meta property="og:title" content="Kushal Pallaka | Portfolio">
+  <meta property="og:description" content="Quantitative finance, forecasting and backend engineering projects.">
+  <meta property="og:type" content="website">
+  <!-- Tab icon: an emoji drawn as a tiny SVG, so no image file is needed -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- ========== NAVIGATION BAR ========== -->
-  <!-- Each link jumps to the section whose id matches (#about -> id="about") -->
   <header class="nav">
-    <a class="logo" href="#top">Your Name</a>
+    <a class="logo" href="#top">Kushal Pallaka</a>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="top">
 
-    <!-- ========== HERO (the big intro at the top) ========== -->
+    <!-- ========== HERO ========== -->
     <section class="hero">
       <p class="eyebrow">Hi, I'm</p>
-      <h1>Your Name</h1>
-      <p class="tagline">One line about what you do, e.g. "Student, builder, and curious human."</p>
-      <a class="button" href="#projects">See my work</a>
+      <h1>Kushal Pallaka</h1>
+      <!-- TODO: tweak this line so it sounds like you -->
+      <p class="tagline">I build tools that test ideas with data: backtesting engines, forecasting models, and the backend systems behind them.</p>
+      <div class="actions">
+        <a class="button" href="#projects">See my work</a>
+        <a class="button ghost" href="#contact">Get in touch</a>
+      </div>
     </section>
 
     <!-- ========== ABOUT ========== -->
     <section id="about">
       <h2>About me</h2>
+      <!-- TODO: replace with your own story: school, what got you into this, what you want next -->
       <p>
-        Write two or three sentences about yourself here: what you're into,
-        what you're learning, and what you want to do next. This is placeholder
-        text. Replace it with your own words.
+        I'm into quantitative finance, forecasting, and building software that holds up under
+        scrutiny. I care about doing the analysis honestly: no lookahead bias, time-based
+        train/test splits, and confidence intervals instead of cherry-picked returns.
       </p>
-      <!-- Skills show as little tags. Copy a <li> line to add more. -->
-      <ul class="tags">
-        <li>Skill one</li>
-        <li>Skill two</li>
-        <li>Skill three</li>
-        <li>Skill four</li>
-      </ul>
+      <p>
+        Right now I'm building out my projects and learning more about data engineering and
+        cloud infrastructure. <!-- TODO: add school / year / what you're looking for (internships, etc.) -->
+      </p>
     </section>
 
     <!-- ========== PROJECTS ========== -->
@@ -54,38 +61,78 @@
       <h2>Projects</h2>
       <div class="grid">
 
-        <!-- One project card. Copy this whole <article> block to add another. -->
-        <article class="card">
+        <article class="card featured">
+          <span class="badge">Featured</span>
           <h3>Quant Backtester</h3>
           <p>
-            A from-scratch backtesting engine with a pluggable strategy interface,
-            five strategies, and bootstrap confidence intervals on performance.
-            Runs behind a Postgres-backed Flask API with async jobs via Celery/Redis,
-            containerized with Docker and Kubernetes.
+            A from-scratch backtesting engine with a pluggable strategy interface and five
+            strategies (moving average crossover, RSI, momentum, mean reversion, logistic
+            regression). Performance is judged with Sharpe ratio, max drawdown and bootstrap
+            confidence intervals, with no-lookahead execution and transaction costs.
+          </p>
+          <p>
+            Runs behind a Postgres-backed Flask API with async jobs through Celery and Redis,
+            containerized with Docker and deployed locally on Kubernetes. Includes a PySpark
+            analysis job and a 49-test pytest suite.
           </p>
           <ul class="tags">
-            <li>Python</li>
-            <li>Flask</li>
-            <li>Postgres</li>
-            <li>Celery / Redis</li>
-            <li>Docker / K8s</li>
+            <li>Python</li><li>Flask</li><li>Postgres</li><li>Celery / Redis</li>
+            <li>Docker / K8s</li><li>PySpark</li>
           </ul>
-          <!-- The repo is private, so there is no link yet. Add one when it's public:
-               <a href="https://github.com/skpallaka/quant-backtester">View project &rarr;</a> -->
+          <!-- Repo is private, so no link yet. When it's public, uncomment:
+          <a href="https://github.com/skpallaka/quant-backtester">View on GitHub &rarr;</a> -->
+          <p class="note">Code available on request.</p>
         </article>
 
         <article class="card">
-          <h3>Project Two</h3>
-          <p>A short description of what this project is and what you built or learned.</p>
-          <a href="#">View project &rarr;</a>
+          <h3>Alphabet P&amp;L Forecast</h3>
+          <p>
+            Forecasts Alphabet's quarterly revenue by segment and operating income from SEC EDGAR
+            filings, with a live-formula Excel model and ETS / SARIMA models compared in a rolling-origin
+            backtest.
+          </p>
+          <p>
+            <strong>Finding:</strong> a simple year-over-year growth rule matched ETS and SARIMA
+            at roughly 4–7% error per segment, and Cloud growth is the biggest swing factor in
+            operating income.
+          </p>
+          <ul class="tags">
+            <li>Python</li><li>SQLite</li><li>statsmodels</li><li>Excel</li><li>SEC EDGAR</li>
+          </ul>
+          <a href="https://github.com/skpallaka/alphabet-forecast">View on GitHub &rarr;</a>
         </article>
 
         <article class="card">
-          <h3>Project Three</h3>
-          <p>A short description of what this project is and what you built or learned.</p>
-          <a href="#">View project &rarr;</a>
+          <h3>QuantVal</h3>
+          <p>
+            An earlier set of trading-strategy experiments (moving average, mean reversion,
+            momentum, RSI) with tests for each. It was the starting point that grew into the
+            Quant Backtester.
+          </p>
+          <ul class="tags">
+            <li>Python</li><li>pytest</li>
+          </ul>
+          <a href="https://github.com/skpallaka/quantval">View on GitHub &rarr;</a>
         </article>
 
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <!-- Grouped so it's easy to scan. Edit, add, or delete anything you don't want to claim. -->
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <ul class="tags"><li>Python</li><li>SQL</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Data &amp; modeling</h3>
+        <ul class="tags"><li>pandas</li><li>statsmodels</li><li>PySpark</li><li>Excel modeling</li><li>Backtesting</li><li>Time-series forecasting</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Backend &amp; infrastructure</h3>
+        <ul class="tags"><li>Flask</li><li>PostgreSQL</li><li>Celery</li><li>Redis</li><li>Docker</li><li>Kubernetes</li><li>pytest</li><li>Git</li></ul>
       </div>
     </section>
 
@@ -93,20 +140,21 @@
     <section id="contact">
       <h2>Get in touch</h2>
       <p>Want to work together or just say hi? Reach out.</p>
-      <!-- Replace the email below. "mailto:" opens the visitor's email app. -->
+      <!-- TODO: put the email you want public here -->
       <a class="button" href="mailto:you@example.com">you@example.com</a>
       <p class="links">
-        <a href="#">GitHub</a> &middot;
+        <a href="https://github.com/skpallaka">GitHub</a> &middot;
+        <!-- TODO: add your LinkedIn URL -->
         <a href="#">LinkedIn</a> &middot;
-        <a href="#">Twitter / X</a>
+        <!-- TODO: add a resume.pdf to this folder, then link it: href="resume.pdf" -->
+        <a href="#">Resume</a>
       </p>
     </section>
 
   </main>
 
   <footer>
-    <!-- Update the name and year as needed -->
-    <p>&copy; 2026 Your Name</p>
+    <p>&copy; 2026 Kushal Pallaka</p>
   </footer>
 
 </body>
