@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kushal Pallaka | Portfolio</title>
-  <meta name="description" content="Kushal Pallaka, UC Berkeley Applied Math: data science, forecasting and backend engineering projects.">
+  <title>Kushal Pallaka | Software Engineer &amp; Data Scientist</title>
+  <meta name="description" content="Kushal Pallaka: software engineer and data scientist, UC Berkeley Applied Math (Dec 2026). Previously NASA / CSGC and Philips.">
   <meta name="theme-color" content="#4f46e5">
   <!-- Link preview when the site is shared (Slack, iMessage, LinkedIn) -->
-  <meta property="og:title" content="Kushal Pallaka | Portfolio">
-  <meta property="og:description" content="Data science, forecasting and backend engineering projects.">
+  <meta property="og:title" content="Kushal Pallaka | Software Engineer &amp; Data Scientist">
+  <meta property="og:description" content="UC Berkeley Applied Math, Dec 2026. Previously NASA / CSGC software engineering intern and Philips data science intern.">
   <meta property="og:type" content="website">
   <!-- Tab icon: an emoji drawn as a tiny SVG, so no image file is needed -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
@@ -20,60 +20,31 @@
   <header class="nav">
     <a class="logo" href="#top">Kushal Pallaka</a>
     <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="#education">Education</a>
+      <a class="nav-cta" href="mailto:skushalpallaka@gmail.com">Email me</a>
     </nav>
   </header>
 
   <main id="top">
 
     <!-- ========== HERO ========== -->
+    <!-- Everything a recruiter needs in the first screen: role, school, best experience, contact -->
     <section class="hero">
-      <p class="eyebrow">UC Berkeley · Applied Math, Data Science minor · December 2026</p>
+      <p class="eyebrow">Software Engineer · Data Scientist</p>
       <h1>Kushal Pallaka</h1>
-      <p class="tagline">I build tools that test ideas with data: backtesting engines, forecasting models, and the backend systems behind them.</p>
+      <p class="tagline">
+        Applied Math and Data Science at UC Berkeley, graduating December 2026. Previously a
+        software engineering intern at NASA / California Space Grant Consortium and a data
+        science intern at Philips.
+      </p>
+      <p class="open">Open to full-time software engineering and data science roles starting in 2027.</p>
       <div class="actions">
-        <a class="button" href="#projects">See my work</a>
-        <a class="button ghost" href="#contact">Get in touch</a>
-      </div>
-    </section>
-
-    <!-- ========== ABOUT ========== -->
-    <section id="about">
-      <h2>About me</h2>
-      <p>
-        I like building data systems and models that hold up under scrutiny. I care about
-        doing the analysis honestly: no data leakage, time-based train/test splits, and
-        confidence intervals instead of cherry-picked results.
-      </p>
-      <p>
-        I'm graduating from UC Berkeley with a BA in Applied Mathematics and a minor in Data Science in December 2026 and
-        I'm open to full-time roles and internships starting in 2027 in software engineering
-        and data science.
-      </p>
-    </section>
-
-    <!-- ========== EDUCATION ========== -->
-    <section id="education">
-      <h2>Education</h2>
-      <div class="job">
-        <div class="job-head">
-          <h3>University of California, Berkeley</h3>
-          <p class="when">Graduating December 2026</p>
-        </div>
-        <p class="degree">BA, Applied Mathematics · Minor in Data Science</p>
-        <div class="skill-group">
-          <h3>Computer science &amp; data science</h3>
-          <ul class="tags"><li>Data Structures (CS 61B)</li><li>Artificial Intelligence (CS 188)</li><li>Principles &amp; Techniques of Data Science (Data 100)</li><li>Computational Structures in Data Science (Data 88C)</li><li>Computational Models of Cognition (CogSci 131)</li></ul>
-        </div>
-        <div class="skill-group">
-          <h3>Mathematics &amp; statistics</h3>
-          <ul class="tags"><li>Optimization (Math 170)</li><li>Numerical Analysis (Math 128A)</li><li>Abstract Linear Algebra (Math 110)</li><li>Real Analysis (Math 104)</li><li>Probability (Stat 134, in progress)</li></ul>
-        </div>
+        <a class="button" href="mailto:skushalpallaka@gmail.com">Email me</a>
+        <a class="button ghost" href="https://www.linkedin.com/in/kushal-p-397521208">LinkedIn</a>
+        <a class="button ghost" href="https://github.com/skpallaka">GitHub</a>
       </div>
     </section>
 
@@ -122,7 +93,11 @@
 
         <article class="card featured">
           <span class="badge">Featured</span>
-          <h3>Quant Backtester</h3>
+          <h3>Backtesting Engine &amp; Async Job API</h3>
+          <p class="lede">
+            A from-scratch engine plus a Flask/Celery job API, run on Kubernetes, that tests
+            whether trading strategies actually beat noise.
+          </p>
           <p>
             <strong>Finding:</strong> of 55 strategy/stock combinations tested on held-out data,
             only 4 had returns above zero with 95% confidence, and all 4 were tech or tech-heavy
@@ -175,7 +150,7 @@
 
         <article class="card">
           <h3>Alphabet P&amp;L Forecast</h3>
-          <p>
+          <p class="lede">
             Forecasts Alphabet's quarterly revenue by segment and operating income from SEC EDGAR
             filings, with a live-formula Excel model and ETS / SARIMA models compared in a rolling-origin
             backtest.
@@ -193,7 +168,7 @@
 
         <article class="card">
           <h3>Wearable Exercise Tracker</h3>
-          <p>
+          <p class="lede">
             An end-to-end sensing pipeline: Arduino/C++ firmware streams 6-axis IMU data over
             Bluetooth Low Energy into a Python client, which counts exercise reps in real time by
             auto-selecting the dominant motion channel and smoothing the signal.
@@ -229,6 +204,23 @@
       <div class="skill-group">
         <h3>Systems &amp; infrastructure</h3>
         <ul class="tags"><li>Docker</li><li>Kubernetes</li><li>PostgreSQL</li><li>Celery / Redis</li><li>Linux</li><li>MQTT / ROS</li><li>Arduino / Bluetooth LE</li></ul>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="job">
+        <div class="job-head">
+          <h3>University of California, Berkeley <span>· BA, Applied Mathematics · Minor in Data Science</span></h3>
+          <p class="when">Dec 2026</p>
+        </div>
+        <p class="courses">
+          <strong>Relevant coursework:</strong> Data Structures (CS 61B), Artificial Intelligence
+          (CS 188), Principles &amp; Techniques of Data Science (Data 100), Optimization (Math 170),
+          Numerical Analysis (Math 128A), Abstract Linear Algebra (Math 110), Probability (Stat 134,
+          in progress)
+        </p>
       </div>
     </section>
 
