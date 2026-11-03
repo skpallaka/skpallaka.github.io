@@ -31,7 +31,6 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero">
-      <p class="eyebrow">Hi, I'm</p>
       <h1>Kushal Pallaka</h1>
       <p class="tagline">I build tools that test ideas with data: backtesting engines, forecasting models, and the backend systems behind them.</p>
       <div class="actions">
@@ -62,15 +61,47 @@
           <span class="badge">Featured</span>
           <h3>Quant Backtester</h3>
           <p>
-            A from-scratch backtesting engine with a pluggable strategy interface and five
-            strategies (moving average crossover, RSI, momentum, mean reversion, logistic
-            regression). Performance is judged with Sharpe ratio, max drawdown and bootstrap
-            confidence intervals, with no-lookahead execution and transaction costs.
+            <strong>Finding:</strong> of 55 strategy/stock combinations tested on held-out data,
+            only 4 had returns above zero with 95% confidence, and all 4 were tech or tech-heavy
+            (QQQ, MSFT, NVDA). The strongest strategy's edge disappeared on non-tech stocks. The
+            engine is built to tell a real edge from noise, and here it showed this one doesn't
+            generalize.
+          </p>
+          <figure class="chart">
+            <svg viewBox="0 0 600 136" role="img" aria-label="Average Sharpe ratio of the logistic regression strategy: mega-cap tech 1.59, index ETFs 0.89, non-tech large-cap -0.05">
+              <line x1="272" y1="4" x2="272" y2="132" class="zero"/>
+      <g class="bar"><title>Mega-cap tech: average Sharpe 1.59 (4 tickers: AAPL, MSFT, NVDA, GOOGL)</title>
+        <rect x="0" y="8" width="600" height="40" fill="transparent"/>
+        <text x="190" y="33" text-anchor="end" class="lbl">Mega-cap tech</text>
+        <path d="M272 16 H497.0 Q501.0 16 501.0 20 V36 Q501.0 40 497.0 40 H272 Z"/>
+        <text x="509.0" y="33" text-anchor="start" class="val">1.59</text>
+      </g>
+      <g class="bar"><title>Index ETFs: average Sharpe 0.89 (4 tickers: SPY, QQQ, IWM, TLT)</title>
+        <rect x="0" y="48" width="600" height="40" fill="transparent"/>
+        <text x="190" y="73" text-anchor="end" class="lbl">Index ETFs</text>
+        <path d="M272 56 H396.2 Q400.2 56 400.2 60 V76 Q400.2 80 396.2 80 H272 Z"/>
+        <text x="408.2" y="73" text-anchor="start" class="val">0.89</text>
+      </g>
+      <g class="bar"><title>Non-tech large-cap: average Sharpe -0.05 (3 tickers: JPM, XOM, JNJ)</title>
+        <rect x="0" y="88" width="600" height="40" fill="transparent"/>
+        <text x="190" y="113" text-anchor="end" class="lbl">Non-tech large-cap</text>
+        <path d="M272 96 H268.4 Q264.8 96 264.8 99.6 V116.4 Q264.8 120 268.4 120 H272 Z"/>
+        <text x="256.8" y="113" text-anchor="end" class="val">-0.05</text>
+      </g>
+            </svg>
+            <figcaption>Best strategy (logistic regression), average out-of-sample Sharpe ratio by stock group. The edge comes from tech and vanishes elsewhere.</figcaption>
+          </figure>
+          <p>
+            A from-scratch engine with a pluggable strategy interface and five strategies
+            (moving average crossover, RSI, momentum, mean reversion, logistic regression),
+            no-lookahead execution, transaction costs, and Sharpe, max drawdown and bootstrap
+            confidence intervals.
           </p>
           <p>
             Runs behind a Postgres-backed Flask API with async jobs through Celery and Redis,
-            containerized with Docker and deployed locally on Kubernetes. Includes a PySpark
-            analysis job and a 49-test pytest suite.
+            containerized with Docker and orchestrated on Kubernetes with load-balanced,
+            self-healing replicas (tested on a local cluster). Includes a PySpark job across
+            34 tickers and a 49-test pytest suite running in CI.
           </p>
           <ul class="tags">
             <li>Python</li><li>Flask</li><li>Postgres</li><li>Celery / Redis</li>
