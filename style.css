@@ -183,3 +183,40 @@ section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
   .button { padding: 0.65rem 1.1rem; }
 }
 .button { border: 2px solid transparent; }   /* same height as the outlined buttons */
+
+/* ---------- POLISH ---------- */
+/* Font: Inter, with the system font as a fallback while it loads */
+body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; }
+h1 { font-weight: 800; letter-spacing: -0.03em; }
+h2 { letter-spacing: -0.02em; }
+
+/* Soft accent glow at the top of the page, and the name fades from text color into the accent */
+body {
+  background: radial-gradient(900px 450px at 30% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%) no-repeat, var(--bg);
+}
+.hero h1 {
+  background: linear-gradient(90deg, var(--text) 30%, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Frosted-glass nav: see-through with a blur, so content shows faintly as it scrolls under */
+.nav {
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 8%, transparent);
+  z-index: 10;
+}
+
+/* Cards: thin border, lifts and glows in the accent color on hover */
+.card {
+  border: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.card.featured { border-color: var(--accent); }
