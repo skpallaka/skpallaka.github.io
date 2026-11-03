@@ -152,3 +152,6 @@ footer { text-align: center; padding: 2rem 1rem; color: var(--muted); font-size:
 .job .when { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .job ul { margin: 0.5rem 0 0; padding-left: 1.25rem; }
 .job li { margin-bottom: 0.35rem; }
+.degree { margin: 0.25rem 0 0; color: var(--muted); }
+.job .tags { padding-left: 0; margin-top: 0; }
+.job .skill-group h3 { font-size: 1rem; color: var(--muted); margin: 1.25rem 0 0.5rem; }
