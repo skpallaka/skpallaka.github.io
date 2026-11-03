@@ -143,3 +143,12 @@ footer { text-align: center; padding: 2rem 1rem; color: var(--muted); font-size:
 .chart .lbl { fill: var(--muted); font-size: 16px; }
 .chart .val { fill: var(--text); font-size: 16px; font-weight: 600; }
 .chart figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+
+/* ---------- EXPERIENCE ---------- */
+.job { margin-bottom: 2rem; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 1rem; }
+.job h3 { margin: 0; font-size: 1.1rem; }
+.job h3 span { color: var(--muted); font-weight: 400; }
+.job .when { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.job ul { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+.job li { margin-bottom: 0.35rem; }

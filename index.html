@@ -21,6 +21,7 @@
     <a class="logo" href="#top">Kushal Pallaka</a>
     <nav>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -31,7 +32,7 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero">
-      <p class="eyebrow">UC Berkeley · Applied Mathematics · December 2026</p>
+      <p class="eyebrow">UC Berkeley · Applied Math, Data Science minor · December 2026</p>
       <h1>Kushal Pallaka</h1>
       <p class="tagline">I build tools that test ideas with data: backtesting engines, forecasting models, and the backend systems behind them.</p>
       <div class="actions">
@@ -49,10 +50,48 @@
         confidence intervals instead of cherry-picked results.
       </p>
       <p>
-        I'm graduating from UC Berkeley with a BA in Applied Mathematics in December 2026 and
+        I'm graduating from UC Berkeley with a BA in Applied Mathematics and a minor in Data Science in December 2026 and
         I'm open to full-time roles and internships starting in 2027 in software engineering
         and data science.
       </p>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Academic Intern, Data 8: Foundations of Data Science <span>· UC Berkeley</span></h3>
+          <p class="when">Jan 2025 – May 2025</p>
+        </div>
+        <ul>
+          <li>Ran weekly lab sections teaching Python, Pandas and data analysis to students with mixed programming backgrounds.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Software Engineer Intern <span>· NASA / California Space Grant Consortium</span></h3>
+          <p class="when">May 2024 – Aug 2024</p>
+        </div>
+        <ul>
+          <li>Built the C++ communication layer (MQTT, ROS) for a remote-controlled rover, streaming real-time data between embedded hardware and a browser client on a 3-engineer team.</li>
+          <li>Merged three live sensor streams (infrared rangefinder, object detection, video) into one processing pipeline driving the rover's actuators.</li>
+          <li>Instrumented each pipeline stage to find the source of end-to-end latency, ruling out network bandwidth and isolating queuing delay as the root cause.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Data Science Intern, Medical Affairs <span>· Philips</span></h3>
+          <p class="when">Oct 2023 – Mar 2024</p>
+        </div>
+        <ul>
+          <li>Built Pandas cleaning pipelines for 30,000–40,000 patient records that became the team's standard intake step for statistical analysis.</li>
+          <li>Analyzed cardiac monitoring outcomes in SQL and Python and delivered visualizations to clinical and research stakeholders.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- ========== PROJECTS ========== -->
@@ -131,24 +170,40 @@
           <a href="https://github.com/skpallaka/alphabet-forecast">View on GitHub &rarr;</a>
         </article>
 
+        <article class="card">
+          <h3>Wearable Exercise Tracker</h3>
+          <p>
+            An end-to-end sensing pipeline: Arduino/C++ firmware streams 6-axis IMU data over
+            Bluetooth Low Energy into a Python client, which counts exercise reps in real time by
+            auto-selecting the dominant motion channel and smoothing the signal.
+          </p>
+          <p>
+            Includes a labeled data-collection protocol (per-exercise, per-subject sessions logged
+            to CSV) for building a multi-channel IMU dataset.
+          </p>
+          <ul class="tags">
+            <li>C++ / Arduino</li><li>Python</li><li>NumPy</li><li>Bluetooth LE</li><li>Signal processing</li>
+          </ul>
+          <p class="note">In progress</p>
+        </article>
+
       </div>
     </section>
 
     <!-- ========== SKILLS ========== -->
     <section id="skills">
       <h2>Skills</h2>
-      <!-- Grouped so it's easy to scan. Edit, add, or delete anything you don't want to claim. -->
-      <div class="skill-group">
+            <div class="skill-group">
         <h3>Languages</h3>
-        <ul class="tags"><li>Python</li><li>SQL</li></ul>
+        <ul class="tags"><li>Python</li><li>SQL</li><li>C++</li><li>Java</li><li>TypeScript</li></ul>
       </div>
       <div class="skill-group">
         <h3>Data &amp; modeling</h3>
-        <ul class="tags"><li>pandas</li><li>statsmodels</li><li>PySpark</li><li>Excel modeling</li><li>Backtesting</li><li>Time-series forecasting</li></ul>
+        <ul class="tags"><li>pandas</li><li>NumPy</li><li>scikit-learn</li><li>statsmodels</li><li>PySpark</li><li>Excel modeling</li><li>Backtesting</li><li>Time-series forecasting</li></ul>
       </div>
       <div class="skill-group">
         <h3>Backend &amp; infrastructure</h3>
-        <ul class="tags"><li>Flask</li><li>PostgreSQL</li><li>Celery</li><li>Redis</li><li>Docker</li><li>Kubernetes</li><li>pytest</li><li>Git</li></ul>
+        <ul class="tags"><li>Flask</li><li>PostgreSQL</li><li>Celery</li><li>Redis</li><li>Docker</li><li>Kubernetes</li><li>pytest</li><li>GitHub Actions CI</li><li>Git</li><li>Linux</li></ul>
       </div>
     </section>
 
